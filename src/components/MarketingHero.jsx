@@ -20,17 +20,15 @@ export default function MarketingHero() {
               NOW LIVE ACROSS NIGERIA
             </p>
           </div>
-          <h1 className="font-extrabold uppercase leading-[0.95] tracking-tighter text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
-            <span className="block text-white">YOU NAME</span>
-            <span className="block text-white">
-              THE <span className="text-brand-orange">FARE.</span>
-            </span>
-            <span className="block text-white">WE DRIVE.</span>
+          <h1 className="font-extrabold leading-[0.95] text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
+            <span className="block text-white">Set your own fare.</span>
+            <span className="block text-white">Ride your way.</span>
           </h1>
           <p className="mt-6 max-w-[90%] text-base leading-relaxed text-white sm:mt-8 sm:max-w-xl md:max-w-xl">
-            GetDrives puts the power in your hands. Set your own fare, choose your
-            driver, and move on your own terms — no surge pricing, no algorithms
-            deciding your worth.
+            No surprises, no stress — just simple rides that work for you.
+          </p>
+          <p className="mt-3 max-w-[90%] text-sm leading-relaxed text-white/70 sm:max-w-xl md:max-w-xl">
+            Trusted by everyday riders across Lagos.
           </p>
         </motion.div>
 

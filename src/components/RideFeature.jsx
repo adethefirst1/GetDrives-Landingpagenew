@@ -41,14 +41,15 @@ export default function RideFeature() {
           {...m.splitText}
         >
           <h2 className="font-extrabold uppercase leading-[0.95] tracking-tighter text-white text-[clamp(1.75rem,4vw,2.75rem)]">
-            <span className="block">YOUR FARE.</span>
-            <span className="block">YOUR DRIVER.</span>
-            <span className="block">YOUR RIDE.</span>
+            <span className="block">Getting around shouldn&apos;t be</span>
+            <span className="block text-brand-orange">stressful</span>
           </h2>
           <p className="w-full max-w-[90%] text-base leading-relaxed sm:max-w-xl text-brand-gray">
-            GetDrives is a platform that empowers riders by giving them the freedom to
-            choose their driver and negotiate their fare. No more surge pricing or
-            hidden fees.
+            Choose your ride, set your fare, and move without the usual back and
+            forth.
+          </p>
+          <p className="w-full max-w-[90%] text-sm leading-relaxed text-brand-gray/80 sm:max-w-xl">
+            Simple, reliable, and built for everyday movement in Nigeria.
           </p>
           <div className="flex flex-wrap gap-2">
             {tags.map((t) => (
@@ -68,6 +69,9 @@ export default function RideFeature() {
           >
             DOWNLOAD THE APP
           </MotionLink>
+          <p className="w-full max-w-[90%] text-sm leading-relaxed text-brand-gray/80 sm:max-w-xl">
+            Takes less than a minute to get started.
+          </p>
         </motion.div>
       </div>
     </section>

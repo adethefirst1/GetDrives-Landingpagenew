@@ -18,19 +18,6 @@ function IconCity({ className }) {
   );
 }
 
-function IconDiamond({ className }) {
-  return (
-    <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={1.5}
-        d="M12 3l6.5 8.5L12 21l-6.5-9.5L12 3z"
-      />
-    </svg>
-  );
-}
-
 function IconBox({ className }) {
   return (
     <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -59,23 +46,22 @@ function IconBriefcase({ className }) {
 
 const cards = [
   {
-    title: "CITY RIDES",
-    desc: "Affordable and reliable rides for your daily commute within the city.",
+    title: "Ride anywhere with ease",
+    desc: "Book rides, set your fare, and move without stress.",
+    support:
+      "Perfect for daily trips, work, or getting around town.",
     Icon: IconCity,
   },
   {
-    title: "PREMIUM RIDES",
-    desc: "Luxury vehicles and top-rated drivers for a more comfortable and stylish journey.",
-    Icon: IconDiamond,
-  },
-  {
-    title: "DELIVERY",
-    desc: "Fast and secure delivery of your packages and goods across the city.",
+    title: "Send items quickly and safely",
+    desc: "Deliver packages across town without the usual delays.",
+    support: "From documents to everyday items, we've got you covered.",
     Icon: IconBox,
   },
   {
-    title: "BUSINESS",
-    desc: "Tailored solutions for your corporate travel and logistics needs.",
+    title: "Earn by driving on your terms",
+    desc: "Accept trips, work when you want, and earn at your pace.",
+    support: "No fixed schedule, no pressure.",
     Icon: IconBriefcase,
   },
 ];
@@ -87,10 +73,15 @@ export default function ServicesOverview() {
     <section id="browse-services" className="py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-10 flex flex-col justify-between gap-8 md:mb-16 md:flex-row md:items-end md:gap-12">
-          <h2 className="font-extrabold uppercase leading-[0.95] tracking-tighter text-white text-[clamp(2rem,5vw,3.5rem)]">
-            <span className="block">ONE APP.</span>
-            <span className="block">EVERY JOURNEY.</span>
-          </h2>
+          <div className="min-w-0">
+            <h2 className="font-extrabold uppercase leading-[0.95] tracking-tighter text-white text-[clamp(2rem,5vw,3.5rem)]">
+              <span className="block">ONE APP.</span>
+              <span className="block">EVERY JOURNEY.</span>
+            </h2>
+            <p className="mt-3 max-w-xl text-sm leading-relaxed text-brand-gray/80">
+              Built for everyday movement across Nigeria.
+            </p>
+          </div>
           <MotionLink
             to="/services"
             className="w-full shrink-0 self-start text-center text-sm font-bold uppercase tracking-wide text-white hover:text-brand-orange md:w-auto md:self-auto md:text-left"
@@ -102,13 +93,13 @@ export default function ServicesOverview() {
         </div>
 
         <motion.div
-          className="grid gap-8 sm:grid-cols-2 sm:gap-10 md:gap-12 lg:grid-cols-4"
+          className="grid gap-8 sm:grid-cols-2 sm:gap-10 md:gap-12 lg:grid-cols-3"
           initial="hidden"
           whileInView="show"
           viewport={inView}
           variants={m.cardListVariants}
         >
-          {cards.map(({ title, desc, Icon }) => (
+          {cards.map(({ title, desc, support, Icon }) => (
             <motion.article
               key={title}
               className="border border-white/[0.06] p-6"
@@ -119,6 +110,9 @@ export default function ServicesOverview() {
                 {title}
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-brand-gray">{desc}</p>
+              <p className="mt-2 text-sm leading-relaxed text-brand-gray/80">
+                {support}
+              </p>
             </motion.article>
           ))}
         </motion.div>

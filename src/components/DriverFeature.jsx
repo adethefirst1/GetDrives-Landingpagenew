@@ -22,14 +22,12 @@ export default function DriverFeature() {
       <div className="mx-auto grid min-w-0 max-w-7xl items-center gap-8 px-6 md:gap-12 lg:grid-cols-2 lg:gap-16">
         <motion.div className="space-y-6" {...m.splitText}>
           <h2 className="font-extrabold uppercase leading-[0.95] tracking-tighter text-white text-[clamp(1.75rem,4vw,2.75rem)]">
-            <span className="block">EARN MORE.</span>
-            <span className="block">KEEP MORE.</span>
-            <span className="block">DRIVE FREE.</span>
+            <span className="block">Earn on your own</span>
+            <span className="block text-brand-orange">terms.</span>
           </h2>
           <p className="w-full max-w-[90%] text-base leading-relaxed sm:max-w-xl text-brand-gray">
-            GetDrives is a platform that empowers drivers by giving them the freedom
-            to keep more of their earnings. We charge a flat fee per ride, so you keep
-            what you earn.
+            Drive when it suits you and earn without pressure. Simple, flexible, and
+            built around you.
           </p>
           <div className="flex flex-wrap gap-2">
             {tags.map((t) => (
@@ -49,6 +47,9 @@ export default function DriverFeature() {
           >
             START DRIVING
           </MotionLink>
+          <p className="w-full max-w-[90%] text-sm leading-relaxed text-brand-gray/80 sm:max-w-xl">
+            No complicated setup. Get started quickly, wherever you are.
+          </p>
         </motion.div>
 
         <motion.div

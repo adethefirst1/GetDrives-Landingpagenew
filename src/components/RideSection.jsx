@@ -46,13 +46,15 @@ export default function RideSection() {
             01 — RIDE SERVICES
           </p>
           <h2 className="font-extrabold uppercase leading-[0.95] tracking-tighter text-[clamp(1.75rem,4vw,2.75rem)] text-white">
-            <span className="block">FAST RIDE.</span>
-            <span className="block">FAIR FARES.</span>
-            <span className="block">YOUR CHOICE.</span>
+            <span className="block">Getting around shouldn&apos;t be</span>
+            <span className="block text-brand-orange">stressful</span>
           </h2>
           <p className="w-full max-w-xl text-base leading-relaxed text-brand-gray">
-            Set the fare you want to pay, browse drivers by rating and ETA, and
-            confirm only when you&apos;re happy. No surge pricing. Ever.
+            Choose your ride, set your fare, and move without the usual back and
+            forth.
+          </p>
+          <p className="w-full max-w-xl text-sm leading-relaxed text-brand-gray/80">
+            Simple, reliable, and built for everyday movement in Nigeria.
           </p>
           <TagRow tags={rideTags} />
           <MotionLink
@@ -63,6 +65,9 @@ export default function RideSection() {
           >
             BOOK A RIDE
           </MotionLink>
+          <p className="w-full max-w-xl text-sm leading-relaxed text-brand-gray/80">
+            Takes less than a minute to get started.
+          </p>
         </motion.div>
       </div>
     </section>

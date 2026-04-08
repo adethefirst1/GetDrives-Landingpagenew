@@ -60,15 +60,15 @@ export default function DriverHero() {
               </p>
             </div>
             <h1 className="font-extrabold uppercase leading-[0.95] tracking-tighter text-[clamp(2.25rem,6vw,4rem)]">
-              <span className="block text-white">TURN</span>
-              <span className="block text-white">MILES</span>
-              <span className="block text-white">INTO</span>
-              <span className="block text-[#FF4500]">INCOME.</span>
+              <span className="block text-white">Earn on your own</span>
+              <span className="block text-[#FF4500]">terms.</span>
             </h1>
             <p className="mt-8 w-full max-w-xl text-base leading-relaxed text-[#BBBBBB]">
-              GetDrives puts the power in your hands. Set your own fare, choose
-              your driver, and move on your own terms — no surge pricing, no
-              algorithms deciding your worth.
+              No fixed schedule, no pressure — just drive when it works for you and
+              earn at your pace.
+            </p>
+            <p className="mt-3 w-full max-w-xl text-sm leading-relaxed text-[#BBBBBB]/70">
+              Whether it&apos;s full-time or just extra income, you stay in control.
             </p>
             <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-3">
               <MotionLink
