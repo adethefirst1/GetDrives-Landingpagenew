@@ -8,7 +8,7 @@ const simpleItems = [
   "SET YOUR FARE",
 ];
 
-/** Drive page: auto-scrolling ticker — copy and colors match UI mock. */
+/** Drive page: auto-scrolling ticker; copy and colors match UI mock. */
 const driveMarqueeItems = [
   "CITY RIDES",
   "PREMIUM RIDES",

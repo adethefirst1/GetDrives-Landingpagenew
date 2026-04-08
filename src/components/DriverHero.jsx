@@ -64,7 +64,7 @@ export default function DriverHero() {
               <span className="block text-[#FF4500]">terms.</span>
             </h1>
             <p className="mt-8 w-full max-w-xl text-base leading-relaxed text-[#BBBBBB]">
-              No fixed schedule, no pressure — just drive when it works for you and
+              No fixed schedule, no pressure. Just drive when it works for you and
               earn at your pace.
             </p>
             <p className="mt-3 w-full max-w-xl text-sm leading-relaxed text-[#BBBBBB]/70">

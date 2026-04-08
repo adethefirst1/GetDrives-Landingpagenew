@@ -12,7 +12,7 @@ const steps = [
   {
     n: "03",
     title: "RIDE & PAY SEAMLESSLY",
-    body: "Your driver arrives, you ride. Payment is settled in-app — cash or card. Rate the experience when you arrive.",
+    body: "Your driver arrives, you ride. Payment is settled in-app, cash or card. Rate the experience when you arrive.",
   },
 ];
 

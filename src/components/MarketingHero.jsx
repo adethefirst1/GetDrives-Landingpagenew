@@ -25,10 +25,10 @@ export default function MarketingHero() {
             <span className="block text-white">Ride your way.</span>
           </h1>
           <p className="mt-6 max-w-[90%] text-base leading-relaxed text-white sm:mt-8 sm:max-w-xl md:max-w-xl">
-            No surprises, no stress — just simple rides that work for you.
+            No surprises, no stress. Just simple rides that work for you.
           </p>
           <p className="mt-3 max-w-[90%] text-sm leading-relaxed text-white/70 sm:max-w-xl md:max-w-xl">
-            Trusted by everyday riders across Lagos.
+            Trusted by everyday riders across Nigeria.
           </p>
         </motion.div>
 

@@ -185,12 +185,12 @@ function IconHandshake({ className = iconClass }) {
 const benefits = [
   {
     title: "FLEXIBLE HOURS",
-    body: "Drive whenever suits you — full-time, part-time, mornings or nights. No minimum hours, no scheduling pressure.",
+    body: "Drive whenever suits you, full-time, part-time, mornings or nights. No minimum hours, no scheduling pressure.",
     Icon: IconAlarmClock,
   },
   {
     title: "FAIR EARNINGS",
-    body: "Nigeria's lowest commission rates. See exactly what you'll earn before accepting every single trip — no surprises.",
+    body: "Nigeria's lowest commission rates. See exactly what you'll earn before accepting every single trip, with no surprises.",
     Icon: IconMoneyBag,
   },
   {
@@ -200,7 +200,7 @@ const benefits = [
   },
   {
     title: "SMART DRIVER APP",
-    body: "Navigation, earnings tracker, and 24/7 support — all in one intuitive driver interface built for Nigerian roads.",
+    body: "Navigation, earnings tracker, and 24/7 support, all in one intuitive driver interface built for Nigerian roads.",
     Icon: IconSmartphoneApps,
   },
   {

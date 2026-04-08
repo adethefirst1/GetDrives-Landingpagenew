@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { PATH_DOWNLOAD } from "../ctaCopy";
 import { trackEvent } from "../lib/analytics";
-import FlowImageCluster from "./FlowImageCluster";
 import TagRow from "./TagRow";
 import { useAccessibleMotion } from "../motionPresets";
 
@@ -13,13 +12,6 @@ const deliveryTags = [
   "SCHEDULED PICKUP",
   "BULK SHIPMENT",
   "LIVE TRACKING",
-];
-
-const deliveryBases = ["/delivery-1", "/delivery-2", "/delivery-3"];
-const alts = [
-  "Package handoff for delivery",
-  "Phone showing live map tracking",
-  "Package received at destination",
 ];
 
 export default function DeliverySection() {
@@ -33,7 +25,7 @@ export default function DeliverySection() {
           {...m.splitText}
         >
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-brand-orange">
-            02 — LOGISTICS & DELIVERY
+            02 · LOGISTICS & DELIVERY
           </p>
           <h2 className="font-extrabold uppercase leading-[0.95] tracking-tighter text-[clamp(1.75rem,4vw,2.75rem)] text-white">
             <span className="block">SEND IT.</span>
@@ -55,8 +47,17 @@ export default function DeliverySection() {
           </MotionLink>
         </motion.div>
 
-        <motion.div className="relative min-h-[240px] lg:min-h-[420px]" {...m.splitImageRight}>
-          <FlowImageCluster bases={deliveryBases} ext="jpg" alts={alts} />
+        <motion.div
+          className="relative flex min-h-[240px] items-center justify-center lg:min-h-[420px]"
+          {...m.splitImageRight}
+        >
+          <img
+            src="/delivery-flow-story.png"
+            alt="Send a package, track delivery on your phone, and receive at the door"
+            className="h-auto w-full max-w-[520px] object-contain px-4 py-4 lg:max-w-none"
+            loading="lazy"
+            decoding="async"
+          />
         </motion.div>
       </div>
     </section>

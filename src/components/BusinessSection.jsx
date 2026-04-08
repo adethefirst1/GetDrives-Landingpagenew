@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import ResponsivePicture from "./ResponsivePicture";
 import TagRow from "./TagRow";
 import { useAccessibleMotion } from "../motionPresets";
 
@@ -23,15 +22,12 @@ export default function BusinessSection() {
           className="order-2 flex min-h-[240px] items-center justify-center overflow-hidden bg-brand-bg lg:order-1 lg:min-h-[420px]"
           {...m.splitImageLeft}
         >
-          <ResponsivePicture
-            base="/business-flow"
-            ext="png"
-            alt="Travel, expense analytics, and team collaboration in a continuous flow"
-            responsive
+          <img
+            src="/business-flow-story.png"
+            alt="Travel with the app, track spending and reports, and align your team"
+            className="h-auto w-full max-w-[520px] object-contain px-4 py-8 lg:max-w-none"
             loading="lazy"
             decoding="async"
-            sizes="(max-width: 1024px) 100vw, min(520px, 50vw)"
-            className="h-auto w-full max-w-[520px] object-contain px-4 py-8 lg:max-w-none"
           />
         </motion.div>
 
@@ -40,7 +36,7 @@ export default function BusinessSection() {
           {...m.splitText}
         >
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-brand-orange">
-            03 — BUSINESS SOLUTIONS
+            03 · BUSINESS SOLUTIONS
           </p>
           <h2 className="font-extrabold uppercase leading-[0.95] tracking-tighter text-[clamp(1.75rem,4vw,2.75rem)] text-white">
             <span className="block">MANAGE TRAVEL.</span>

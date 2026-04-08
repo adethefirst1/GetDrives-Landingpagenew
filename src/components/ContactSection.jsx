@@ -295,7 +295,7 @@ export default function ContactSection() {
                 role="status"
                 aria-live="polite"
               >
-                Thanks — your message was sent. We&apos;ll get back to you soon.
+                Thanks, your message was sent. We&apos;ll get back to you soon.
               </p>
             )}
             {status === "error" && (

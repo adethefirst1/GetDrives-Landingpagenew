@@ -17,7 +17,7 @@ export default function AboutHero() {
         <p className="mt-8 w-full max-w-2xl text-base leading-relaxed text-[#999999] md:max-w-[min(42rem,50%)]">
           GetDrives was born from a simple frustration: getting around Nigerian
           cities was harder than it needed to be. We set out to build a platform
-          where riders set fair prices and drivers keep fair earnings — one trip
+          where riders set fair prices and drivers keep fair earnings, one trip
           at a time.
         </p>
         <motion.a
