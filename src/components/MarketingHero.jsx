@@ -11,7 +11,10 @@ export default function MarketingHero() {
   const m = useAccessibleMotion();
 
   return (
-    <section className="py-16 sm:py-18 md:py-20">
+    <section className="relative overflow-hidden py-16 sm:py-18 md:py-20">
+      {/* Subtle background glow */}
+      <div className="pointer-events-none absolute left-1/2 top-0 -z-10 h-[600px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-orange/[0.08] blur-[100px]" aria-hidden />
+      
       <div className="mx-auto grid min-w-0 max-w-7xl items-start gap-8 px-6 md:gap-12 lg:grid-cols-2 lg:gap-16 lg:items-center">
         <motion.div className="min-w-0" {...m.heroTextBlock}>
           <div className="mb-6 flex items-center gap-3">
@@ -54,7 +57,7 @@ export default function MarketingHero() {
             <div className="mt-6 flex w-full flex-col gap-3 sm:mt-8 sm:flex-row sm:items-center sm:justify-end lg:mt-10">
               <MotionLink
                 to="/services"
-                className="inline-flex min-h-[48px] w-full items-center justify-center rounded-md bg-brand-orange px-6 py-3.5 text-center font-sans text-xs font-bold uppercase tracking-[0.2em] text-white hover:opacity-95 sm:w-auto"
+                className="inline-flex min-h-[48px] w-full items-center justify-center rounded-md bg-brand-orange px-6 py-3.5 text-center font-sans text-xs font-bold uppercase tracking-[0.2em] text-white transition-shadow hover:shadow-glow-orange hover:opacity-100 sm:w-auto"
                 {...m.buttonHoverProps}
                 onClick={() => trackEvent("nav_click", { label: "SERVICES" })}
               >
@@ -62,7 +65,7 @@ export default function MarketingHero() {
               </MotionLink>
               <MotionLink
                 to={PATH_DRIVE_WITH_US}
-                className="inline-flex min-h-[48px] w-full items-center justify-center rounded-md border border-white bg-transparent px-6 py-3.5 text-center font-sans text-xs font-bold uppercase tracking-[0.2em] text-white hover:bg-white/5 sm:w-auto"
+                className="inline-flex min-h-[48px] w-full items-center justify-center rounded-md border border-white bg-transparent px-6 py-3.5 text-center font-sans text-xs font-bold uppercase tracking-[0.2em] text-white transition-all hover:bg-white/5 hover:shadow-glow-white sm:w-auto"
                 {...m.buttonHoverProps}
                 onClick={() => trackEvent("cta_drive_click")}
               >

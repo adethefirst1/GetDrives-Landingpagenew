@@ -95,7 +95,7 @@ export default function Navbar() {
   const close = () => setIsOpen(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/5 bg-brand-bg/95 backdrop-blur-sm">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0B0B0B]/60 backdrop-blur-md">
       <a href="#main-content" className="skip-to-main">
         Skip to main content
       </a>

@@ -102,7 +102,7 @@ export default function ServicesOverview() {
           {cards.map(({ title, desc, support, Icon }) => (
             <motion.article
               key={title}
-              className="border border-white/[0.06] p-6"
+              className="border border-white/[0.06] bg-white/[0.01] p-6 backdrop-blur-sm transition-all duration-300 hover:border-brand-orange/50 hover:bg-white/[0.02] hover:shadow-glow-orange"
               variants={m.cardItemVariants}
             >
               <Icon className="h-8 w-8 text-white" />

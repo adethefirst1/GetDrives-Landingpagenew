@@ -203,18 +203,16 @@ export default function Footer({ variant = "home" }) {
             <p className="text-xs text-[#444444]">
               © {new Date().getFullYear()} GetDrives. All rights reserved.
             </p>
-            <div className="flex flex-wrap items-center gap-x-1 text-xs text-[#444444]">
-              <a href="#" className="hover:underline" onClick={(e) => e.preventDefault()}>
+            <div className="flex flex-wrap items-center gap-4 text-xs text-[#444444]">
+              <Link to="/privacy" className="hover:underline">
                 Privacy Policy
-              </a>
-              <span aria-hidden> · </span>
-              <a href="#" className="hover:underline" onClick={(e) => e.preventDefault()}>
+              </Link>
+              <Link to="/terms" className="hover:underline">
                 Terms of Service
-              </a>
-              <span aria-hidden> · </span>
-              <a href="#" className="hover:underline" onClick={(e) => e.preventDefault()}>
+              </Link>
+              <Link to="/cookies" className="hover:underline">
                 Cookie Policy
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -289,18 +287,16 @@ export default function Footer({ variant = "home" }) {
           <p className="text-left text-xs text-[#444444]">
             © 2025 GetDrives. All rights reserved.
           </p>
-          <div className="flex flex-wrap items-center gap-x-1 text-xs text-[#444444] md:justify-end">
-            <a href="#" className="hover:underline" onClick={(e) => e.preventDefault()}>
+          <div className="flex flex-wrap items-center gap-4 text-xs text-[#444444] md:justify-end">
+            <Link to="/privacy" className="hover:underline">
               Privacy Policy
-            </a>
-            <span aria-hidden> · </span>
-            <a href="#" className="hover:underline" onClick={(e) => e.preventDefault()}>
+            </Link>
+            <Link to="/terms" className="hover:underline">
               Terms of Service
-            </a>
-            <span aria-hidden> · </span>
-            <a href="#" className="hover:underline" onClick={(e) => e.preventDefault()}>
+            </Link>
+            <Link to="/cookies" className="hover:underline">
               Cookie Policy
-            </a>
+            </Link>
           </div>
         </div>
       </div>

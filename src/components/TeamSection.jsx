@@ -22,19 +22,24 @@ function PersonIcon({ className = "h-14 w-14" }) {
 
 const team = [
   {
-    name: "FAJUYITAN OBI",
-    role: "CEO & CO-FOUNDER",
+    name: "Oluwatobi Julius Ogunjide",
+    role: "Founder & CEO",
     bio: "Leads company strategy and partnerships, focused on scaling safe, affordable mobility across Nigeria.",
   },
   {
-    name: "ABAYOMI NWOSU",
-    role: "CTO & CO-FOUNDER",
-    bio: "Owns the product and engineering roadmap, shipping a platform riders and drivers can rely on every day.",
+    name: "Joshua Ali",
+    role: "Co-Founder",
+    bio: "Helps shape the company vision and growth strategy across rider and driver experiences.",
   },
   {
-    name: "AKANJI AISHAT",
-    role: "HEAD OF OPERATIONS",
+    name: "Clement Hunsu",
+    role: "Head of Operations",
     bio: "Runs on-the-ground operations and support, keeping quality high as we grow city by city.",
+  },
+  {
+    name: "Cletus Olamilekan",
+    role: "CTO",
+    bio: "Owns the product and engineering roadmap, shipping a platform riders and drivers can rely on every day.",
   },
 ];
 
@@ -53,7 +58,7 @@ export default function TeamSection() {
         </h2>
 
         <motion.div
-          className="mt-10 grid gap-8 md:mt-12 md:grid-cols-3 md:gap-12"
+          className="mt-10 grid gap-8 md:mt-12 md:grid-cols-2 md:gap-12 lg:grid-cols-4"
           initial="hidden"
           whileInView="show"
           viewport={inView}

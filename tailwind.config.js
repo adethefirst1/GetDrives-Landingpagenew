@@ -30,6 +30,13 @@ export default {
       animation: {
         "driver-marquee": "driver-marquee 40s linear infinite",
       },
+      boxShadow: {
+        "glow-orange": "0 0 20px rgba(255, 90, 31, 0.4)",
+        "glow-white": "0 0 20px rgba(255, 255, 255, 0.2)",
+      },
+      dropShadow: {
+        "glow": "0 0 10px rgba(255, 90, 31, 0.6)",
+      },
     },
   },
   plugins: [],
