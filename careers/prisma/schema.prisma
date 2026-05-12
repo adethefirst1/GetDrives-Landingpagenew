@@ -1,0 +1,45 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+/// Canonical job posting record — seeded + admin-ready for future CRUD.
+model Role {
+  id          String      @id @default(cuid())
+  slug        String      @unique
+  title       String
+  summary     String?
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  applicants  Applicant[]
+}
+
+/// Single application submission — CV stored as UploadThing URL.
+model Applicant {
+  id                     String   @id @default(cuid())
+  fullName               String
+  email                  String
+  phone                  String
+  location               String
+  roleId                 String
+  linkedInUrl            String?
+  portfolioUrl           String?
+  yearsExperience        String
+  workedWithStartups     String
+  campaignsDescription   String   @db.Text
+  whyGetDrives           String   @db.Text
+  cvUrl                  String
+  introVideoUrl          String?
+  createdAt              DateTime @default(now())
+  updatedAt              DateTime @updatedAt
+
+  role Role @relation(fields: [roleId], references: [id], onDelete: Restrict)
+
+  @@index([email])
+  @@index([roleId])
+  @@index([createdAt])
+}

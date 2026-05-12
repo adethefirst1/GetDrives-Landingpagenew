@@ -7,6 +7,8 @@ export const DOCUMENT_TITLES = {
   driveWithUs: "Earn as a Driver | GetDrives",
   about: "About GetDrives",
   download: "Download the GetDrives App",
+  blog: "Newsroom | GetDrives",
+  careers: "Careers | GetDrives",
 };
 
 export function useDocumentTitle(title) {

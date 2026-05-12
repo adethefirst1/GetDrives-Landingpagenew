@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { trackEvent } from "../lib/analytics";
 import Logo from "./Logo";
 
-const aboutCompany = ["About Us", "Support", "Press", "Blog"];
+const aboutCompany = ["About Us", "Careers", "Support", "Press", "Blog"];
 const aboutServices = ["Get Ride", "Get Lift", "Delivery", "Renting"];
 const aboutDrivers = [
   "Sign up to drive",
@@ -108,12 +108,14 @@ function FooterLink({ href, to, children, navLabel }) {
       </Link>
     );
   }
+  const isPlaceholder = !href || href === "#";
   return (
     <a
-      href={href}
+      href={isPlaceholder ? "#" : href}
       className={className}
       onClick={(e) => {
-        e.preventDefault();
+        if (isPlaceholder) e.preventDefault();
+        if (navLabel) trackEvent("nav_click", { label: navLabel });
       }}
     >
       {children}
@@ -162,8 +164,16 @@ export default function Footer({ variant = "home" }) {
                     <FooterLink to="/about" navLabel={label}>
                       {label}
                     </FooterLink>
+                  ) : label === "Careers" ? (
+                    <FooterLink to="/careers" navLabel={label}>
+                      {label}
+                    </FooterLink>
                   ) : label === "Support" ? (
                     <FooterLink to="/about#contact" navLabel={label}>
+                      {label}
+                    </FooterLink>
+                  ) : label === "Blog" ? (
+                    <FooterLink to="/blog" navLabel={label}>
                       {label}
                     </FooterLink>
                   ) : (
@@ -245,6 +255,14 @@ export default function Footer({ variant = "home" }) {
               <li key={label}>
                 {label === "About Us" ? (
                   <FooterLink to="/about" navLabel={label}>
+                    {label}
+                  </FooterLink>
+                ) : label === "Careers" ? (
+                  <FooterLink to="/careers" navLabel={label}>
+                    {label}
+                  </FooterLink>
+                ) : label === "Blog" ? (
+                  <FooterLink to="/blog" navLabel={label}>
                     {label}
                   </FooterLink>
                 ) : (

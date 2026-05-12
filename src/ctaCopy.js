@@ -7,3 +7,4 @@ export const PATH_DRIVE_WITH_US = "/drive-with-us";
 export const STORE_URL_APPLE = "https://apps.apple.com/app/getdrives";
 export const STORE_URL_GOOGLE_PLAY =
   "https://play.google.com/store/apps/details?id=com.getdrives";
+

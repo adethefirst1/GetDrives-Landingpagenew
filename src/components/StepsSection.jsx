@@ -1,13 +1,13 @@
 const steps = [
   {
     n: "01",
-    title: "SIGN UP ONLINE",
-    body: "Complete our quick online form with your basic details and vehicle information.",
+    title: "DOWNLOAD THE DRIVER APP",
+    body: "Install the GetDrives partner app from the App Store or Google Play—it's where you'll register and manage everything.",
   },
   {
     n: "02",
-    title: "SUBMIT DOCUMENTS",
-    body: "Upload your driver's license, vehicle registration, and a valid government ID.",
+    title: "REGISTER YOUR DETAILS",
+    body: "Enter your personal information and vehicle details in the driver app—your driver profile starts here.",
   },
   {
     n: "03",
@@ -16,8 +16,8 @@ const steps = [
   },
   {
     n: "04",
-    title: "START EARNING",
-    body: "Download the driver app, go online, and start accepting trips immediately.",
+    title: "GO ONLINE & ACCEPT TRIPS",
+    body: "Once approved, switch on in the app and start receiving trip requests right away.",
   },
 ];
 
