@@ -10,6 +10,8 @@
     "images:webp": "node scripts/generate-webp.mjs"
   },
   "dependencies": {
+    "@sentry/react": "^10.53.1",
+    "@sentry/vite-plugin": "^5.3.0",
     "framer-motion": "^12.38.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -21,6 +23,6 @@
     "postcss": "^8.4.49",
     "sharp": "^0.34.5",
     "tailwindcss": "^3.4.15",
-    "vite": "^5.4.11"
+    "vite": "^7.3.3"
   }
 }
