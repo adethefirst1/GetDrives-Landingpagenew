@@ -8,7 +8,7 @@ import { trackEvent } from "../lib/analytics";
 import { inView, useAccessibleMotion } from "../motionPresets";
 import { CAREERS_PILLARS, CAREERS_ROLES } from "../data/careersContent";
 
-const CONTACT_EMAIL = "hello@getdrives.com";
+const CONTACT_EMAIL = "careers@getdrives.com";
 
 export default function CareersPage() {
   useDocumentTitle(DOCUMENT_TITLES.careers);
