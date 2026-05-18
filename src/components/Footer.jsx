@@ -2,21 +2,21 @@ import { Link } from "react-router-dom";
 import { trackEvent } from "../lib/analytics";
 import Logo from "./Logo";
 
-const aboutCompany = ["About Us", "Careers", "Support", "Press", "Blog"];
+const aboutCompany = ["About Us", "Careers", "FAQ", "Press", "Blog"];
 const aboutServices = ["Get Ride", "Get Lift", "Delivery", "Renting"];
 const aboutDrivers = [
   "Sign up to drive",
   "Earnings",
-  "Support",
+  "FAQ",
   "Safety",
 ];
 
-const homeCompany = ["About Us", "Careers", "Press", "Blog"];
+const homeCompany = ["About Us", "Careers", "FAQ", "Press", "Blog"];
 const homeServices = ["City Rides", "Premium", "Delivery", "Business"];
 const homeDrivers = [
   "Sign Up to Drive",
   "Earnings",
-  "Support",
+  "FAQ",
   "Safety",
 ];
 
@@ -168,7 +168,7 @@ export default function Footer({ variant = "home" }) {
                     <FooterLink to="/careers" navLabel={label}>
                       {label}
                     </FooterLink>
-                  ) : label === "Support" ? (
+                  ) : label === "FAQ" ? (
                     <FooterLink to="/faq" navLabel={label}>
                       {label}
                     </FooterLink>
@@ -198,7 +198,7 @@ export default function Footer({ variant = "home" }) {
                     <FooterLink to="/drive-with-us" navLabel={label}>
                       {label}
                     </FooterLink>
-                  ) : label === "Support" ? (
+                  ) : label === "FAQ" ? (
                     <FooterLink to="/faq" navLabel={label}>
                       {label}
                     </FooterLink>
@@ -261,6 +261,10 @@ export default function Footer({ variant = "home" }) {
                   <FooterLink to="/careers" navLabel={label}>
                     {label}
                   </FooterLink>
+                ) : label === "FAQ" ? (
+                  <FooterLink to="/faq" navLabel={label}>
+                    {label}
+                  </FooterLink>
                 ) : label === "Blog" ? (
                   <FooterLink to="/blog" navLabel={label}>
                     {label}
@@ -289,7 +293,7 @@ export default function Footer({ variant = "home" }) {
                   <FooterLink to="/drive-with-us" navLabel={label}>
                     {label}
                   </FooterLink>
-                ) : label === "Support" ? (
+                ) : label === "FAQ" ? (
                   <FooterLink to="/faq" navLabel={label}>
                     {label}
                   </FooterLink>
