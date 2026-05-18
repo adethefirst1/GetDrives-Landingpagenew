@@ -169,7 +169,7 @@ export default function Footer({ variant = "home" }) {
                       {label}
                     </FooterLink>
                   ) : label === "Support" ? (
-                    <FooterLink to="/about#contact" navLabel={label}>
+                    <FooterLink to="/faq" navLabel={label}>
                       {label}
                     </FooterLink>
                   ) : label === "Blog" ? (
@@ -199,7 +199,7 @@ export default function Footer({ variant = "home" }) {
                       {label}
                     </FooterLink>
                   ) : label === "Support" ? (
-                    <FooterLink to="/about#contact" navLabel={label}>
+                    <FooterLink to="/faq" navLabel={label}>
                       {label}
                     </FooterLink>
                   ) : (
@@ -290,7 +290,7 @@ export default function Footer({ variant = "home" }) {
                     {label}
                   </FooterLink>
                 ) : label === "Support" ? (
-                  <FooterLink to="/about#contact" navLabel={label}>
+                  <FooterLink to="/faq" navLabel={label}>
                     {label}
                   </FooterLink>
                 ) : (

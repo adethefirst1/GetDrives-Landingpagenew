@@ -6,6 +6,7 @@ export const DOCUMENT_TITLES = {
   services: "Ride & Delivery Services | GetDrives",
   driveWithUs: "Earn as a Driver | GetDrives",
   about: "About GetDrives",
+  faq: "FAQ | GetDrives",
   download: "Download the GetDrives App",
   blog: "Newsroom | GetDrives",
   careers: "Careers | GetDrives",

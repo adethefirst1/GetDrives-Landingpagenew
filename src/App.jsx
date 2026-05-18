@@ -14,6 +14,7 @@ const CookiePolicyPage = lazy(() => import("./pages/CookiePolicyPage"));
 const BlogPage = lazy(() => import("./pages/BlogPage"));
 const BlogPostPage = lazy(() => import("./pages/BlogPostPage"));
 const CareersPage = lazy(() => import("./pages/CareersPage"));
+const FAQPage = lazy(() => import("./pages/FAQPage"));
 const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
 
 export default function App() {
@@ -33,6 +34,7 @@ export default function App() {
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:slug" element={<BlogPostPage />} />
           <Route path="/careers" element={<CareersPage />} />
+          <Route path="/faq" element={<FAQPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>

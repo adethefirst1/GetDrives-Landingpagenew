@@ -142,6 +142,13 @@ export default function Navbar() {
           >
             ABOUT
           </NavLink>
+          <NavLink
+            to="/faq"
+            className={linkClass}
+            onClick={() => trackEvent("nav_click", { label: "FAQ" })}
+          >
+            FAQ
+          </NavLink>
         </nav>
 
         <div className="relative z-10 flex items-center gap-2">
@@ -234,6 +241,16 @@ export default function Navbar() {
                   }}
                 >
                   ABOUT
+                </NavLink>
+                <NavLink
+                  to="/faq"
+                  className={mobileLinkClass}
+                  onClick={() => {
+                    trackEvent("nav_click", { label: "FAQ" });
+                    close();
+                  }}
+                >
+                  FAQ
                 </NavLink>
                 <MotionLink
                   to={PATH_DRIVE_WITH_US}
