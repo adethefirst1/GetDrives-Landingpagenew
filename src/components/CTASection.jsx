@@ -55,17 +55,17 @@ export default function CTASection({ variant = "services" }) {
       >
         <div className="mx-auto flex w-full max-w-7xl flex-col items-start gap-10 px-6 sm:px-8 md:px-10 lg:flex-row lg:items-center lg:justify-between lg:gap-12 lg:px-12 xl:gap-20">
           <h2 className="max-w-xl text-left font-extrabold uppercase tracking-tighter text-[clamp(2.25rem,6vw,4rem)] leading-[0.82] lg:max-w-2xl">
-            <span className="block text-white">APPLY TODAY.</span>
-            <span className="block text-[#FF9E7D]">TAKE 5 MINUTES.</span>
+            <span className="block text-white">YOUR CITY IS NEXT.</span>
+            <span className="block text-[#FF9E7D]">GET ON THE LIST.</span>
           </h2>
           <div className="flex w-full flex-col gap-3.5 sm:flex-row sm:justify-end sm:gap-4 lg:w-auto lg:shrink-0">
             <MotionLink
-              to={`${PATH_DRIVE_WITH_US}#driver-steps`}
+              to={`${PATH_DRIVE_WITH_US}#waitlist`}
               className="inline-flex min-h-[52px] flex-1 items-center justify-center rounded-none bg-white px-8 py-4 text-center text-xs font-bold uppercase tracking-[0.2em] text-[#FF5500] hover:opacity-95 sm:flex-initial sm:min-w-[12rem] md:px-10"
               {...m.buttonHoverProps}
               onClick={() => trackEvent("cta_drive_click")}
             >
-              APPLY TO DRIVE NOW
+              JOIN THE WAITLIST
             </MotionLink>
             <motion.a
               href="mailto:hello@getdrives.com"
@@ -140,7 +140,7 @@ export default function CTASection({ variant = "services" }) {
               className="inline-flex min-h-[48px] items-center justify-center rounded-none bg-[#B23B00] px-6 py-3.5 text-center text-xs font-bold uppercase tracking-[0.2em] text-white hover:opacity-95"
               {...m.buttonHoverProps}
             >
-              BECOME A DRIVER
+              JOIN THE WAITLIST
             </MotionLink>
           </div>
         </div>

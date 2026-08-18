@@ -26,8 +26,8 @@ export default function DriverFeature() {
             <span className="block text-brand-orange">terms.</span>
           </h2>
           <p className="w-full max-w-[90%] text-base leading-relaxed sm:max-w-xl text-brand-gray">
-            Drive when it suits you and earn without pressure. Simple, flexible, and
-            built around you.
+            Drive when it suits you and earn without pressure. Join the waitlist
+            now and we&apos;ll reach you before launch.
           </p>
           <div className="flex flex-wrap gap-2">
             {tags.map((t) => (
@@ -45,10 +45,10 @@ export default function DriverFeature() {
             {...m.buttonHoverProps}
             onClick={() => trackEvent("cta_drive_click")}
           >
-            START DRIVING
+            JOIN THE WAITLIST
           </MotionLink>
           <p className="w-full max-w-[90%] text-sm leading-relaxed text-brand-gray/80 sm:max-w-xl">
-            No complicated setup. Get started quickly, wherever you are.
+            No fee to join. We&apos;ll reach out when your city goes live.
           </p>
         </motion.div>
 

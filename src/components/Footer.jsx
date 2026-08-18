@@ -195,7 +195,7 @@ export default function Footer({ variant = "home" }) {
               {aboutDrivers.map((label) => (
                 <li key={label}>
                   {label === "Sign up to drive" ? (
-                    <FooterLink to="/drive-with-us" navLabel={label}>
+                    <FooterLink to="/drive-with-us#waitlist" navLabel={label}>
                       {label}
                     </FooterLink>
                   ) : label === "FAQ" ? (
@@ -290,7 +290,7 @@ export default function Footer({ variant = "home" }) {
             {homeDrivers.map((label) => (
               <li key={label}>
                 {label === "Sign Up to Drive" ? (
-                  <FooterLink to="/drive-with-us" navLabel={label}>
+                  <FooterLink to="/drive-with-us#waitlist" navLabel={label}>
                     {label}
                   </FooterLink>
                 ) : label === "FAQ" ? (

@@ -153,12 +153,12 @@ export default function Navbar() {
 
         <div className="relative z-10 flex items-center gap-2">
           <MotionLink
-            to={PATH_DRIVE_WITH_US}
+            to={`${PATH_DRIVE_WITH_US}#waitlist`}
             className="relative hidden rounded-md bg-brand-orange px-6 py-3.5 text-xs font-bold uppercase tracking-wide text-white hover:opacity-95 md:inline-flex"
             {...m.buttonHoverProps}
             onClick={() => trackEvent("cta_drive_click")}
           >
-            START EARNING
+            JOIN THE WAITLIST
           </MotionLink>
 
           <button
@@ -253,7 +253,7 @@ export default function Navbar() {
                   FAQ
                 </NavLink>
                 <MotionLink
-                  to={PATH_DRIVE_WITH_US}
+                  to={`${PATH_DRIVE_WITH_US}#waitlist`}
                   className="mt-2 flex min-h-[48px] w-full items-center justify-center rounded-md bg-brand-orange px-6 text-sm font-bold uppercase tracking-wide text-white hover:opacity-95"
                   {...m.buttonHoverProps}
                   onClick={() => {
@@ -261,7 +261,7 @@ export default function Navbar() {
                     close();
                   }}
                 >
-                  START EARNING
+                  JOIN THE WAITLIST
                 </MotionLink>
               </div>
             </motion.nav>

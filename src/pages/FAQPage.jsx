@@ -52,7 +52,7 @@ const FAQ_DATA = [
       {
         id: "drv-1",
         q: "How do I become a driver?",
-        a: "You can apply to drive with GetDrives by visiting our 'Drive With Us' page or downloading the GetDrives Driver app. You'll need to submit some basic documents, complete a background check, and meet our vehicle requirements.",
+        a: "Join the driver waitlist on our Drive With Us page. Tell us your city, vehicle, and when you could start. We'll reach out when GetDrives begins onboarding in your area. No app to download yet. Document checks happen when your city opens.",
       },
       {
         id: "drv-2",
