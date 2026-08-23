@@ -3,8 +3,6 @@ import { motion } from "framer-motion";
 import { trackEvent } from "../lib/analytics";
 import { useAccessibleMotion } from "../motionPresets";
 
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/mwvwzrkk";
-
 const CITIES = [
   { id: "lagos", label: "Lagos" },
   { id: "abuja", label: "Abuja" },
@@ -76,31 +74,6 @@ function formatPhoneDisplay(e164) {
   if (!e164?.startsWith("+234") || e164.length !== 14) return e164;
   const rest = e164.slice(4);
   return `+234 ${rest.slice(0, 3)} ${rest.slice(3, 6)} ${rest.slice(6)}`;
-}
-
-async function submitToFormspree(payload) {
-  const body = new FormData();
-  Object.entries(payload).forEach(([key, value]) => {
-    if (value != null && value !== "") body.append(key, String(value));
-  });
-  const res = await fetch(FORMSPREE_ENDPOINT, {
-    method: "POST",
-    body,
-    headers: { Accept: "application/json" },
-  });
-  let data = {};
-  try {
-    data = await res.json();
-  } catch {
-    /* ignore */
-  }
-  if (!res.ok) {
-    const msg =
-      typeof data.error === "string"
-        ? data.error
-        : "Something went wrong. Please try again.";
-    throw new Error(msg);
-  }
 }
 
 function ChoiceChip({ selected, onSelect, disabled, children }) {
@@ -180,6 +153,7 @@ export default function DriverWaitlistForm() {
       e.preventDefault();
       if (form.honeypot) {
         setStatus("success");
+        setSubmitted({ duplicate: false, phone: "", city: "" });
         return;
       }
 
@@ -239,18 +213,38 @@ export default function DriverWaitlistForm() {
 
       setStatus("loading");
       try {
-        await submitToFormspree({
-          source: "driver_waitlist",
-          _subject: `Driver waitlist: ${cityLabel || "New signup"}`,
-          fullName,
-          phone,
-          city: cityLabel,
-          area: areaValue,
-          vehicleType: labelOf(VEHICLE_TYPES, form.vehicleType),
-          vehicleSituation: labelOf(VEHICLE_SITUATIONS, vehicleSituation),
-          drivenBefore: form.drivenBefore === "yes" ? "Yes" : "No",
-          startTiming: labelOf(START_OPTIONS, form.startTiming),
+        const res = await fetch("/api/waitlist", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            fullName,
+            phone,
+            city: cityLabel,
+            area: areaValue,
+            vehicleType: labelOf(VEHICLE_TYPES, form.vehicleType),
+            vehicleSituation: labelOf(VEHICLE_SITUATIONS, vehicleSituation),
+            drivenBefore: form.drivenBefore === "yes" ? "Yes" : "No",
+            howSoon: labelOf(START_OPTIONS, form.startTiming),
+          }),
         });
+        const data = await res.json();
+
+        if (!data.ok) {
+          setStatus("error");
+          setError(data.error || "Could not join the waitlist. Please try again.");
+          return;
+        }
+
+        if (data.duplicate) {
+          setSubmitted({
+            phone: formatPhoneDisplay(phone),
+            city: cityLabel,
+            duplicate: true,
+          });
+          setStatus("success");
+          return;
+        }
+
         trackEvent("driver_waitlist_submit", {
           city: form.city,
           vehicleType: form.vehicleType,
@@ -258,12 +252,13 @@ export default function DriverWaitlistForm() {
         setSubmitted({
           phone: formatPhoneDisplay(phone),
           city: cityLabel,
+          duplicate: false,
         });
         setForm(emptyForm);
         setStatus("success");
       } catch {
         setStatus("error");
-        setError("Couldn’t join the waitlist. Please try again in a moment.");
+        setError("Could not join the waitlist. Please try again in a moment.");
       }
     },
     [areaRequired, cityLabel, form, showOtherArea, showOwnership],
@@ -277,26 +272,34 @@ export default function DriverWaitlistForm() {
         aria-live="polite"
       >
         <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-brand-orange">
-          You’re in
+          {submitted.duplicate ? "Already listed" : "You’re in"}
         </p>
         <h2 className="mt-4 font-extrabold uppercase leading-[0.95] tracking-tighter text-white text-[clamp(1.75rem,4vw,2.35rem)]">
-          You’re on the list.
+          {submitted.duplicate ? "You’re already on the list." : "You’re on the list."}
         </h2>
         <p className="mt-5 text-base leading-relaxed text-[#BBBBBB]">
-          We&apos;ll reach you on{" "}
-          <span className="font-semibold text-white">{submitted.phone}</span>
-          {submitted.city ? (
+          {submitted.duplicate ? (
+            <>We already have this number. We’ll reach out when we start onboarding in your city.</>
+          ) : (
             <>
-              {" "}
-              when we start onboarding in{" "}
-              <span className="font-semibold text-white">{submitted.city}</span>
+              We&apos;ll reach you on{" "}
+              <span className="font-semibold text-white">{submitted.phone}</span>
+              {submitted.city ? (
+                <>
+                  {" "}
+                  when we start onboarding in{" "}
+                  <span className="font-semibold text-white">{submitted.city}</span>
+                </>
+              ) : null}
+              . No app to download yet.
             </>
-          ) : null}
-          . No app to download yet.
+          )}
         </p>
-        <p className="mt-4 text-sm leading-relaxed text-[#888888]">
-          Want a friend on the list too? Send them this page.
-        </p>
+        {!submitted.duplicate ? (
+          <p className="mt-4 text-sm leading-relaxed text-[#888888]">
+            Want a friend on the list too? Send them this page.
+          </p>
+        ) : null}
       </div>
     );
   }
