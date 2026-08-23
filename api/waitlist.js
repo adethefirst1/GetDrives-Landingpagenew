@@ -1,4 +1,4 @@
-const { google } = require('googleapis');
+import { google } from 'googleapis';
 
 const SHEET_NAME = 'Waitlist';
 // Columns, in order, matching row 1 of the sheet exactly:
@@ -46,7 +46,7 @@ function getAuth() {
   });
 }
 
-module.exports = async function handler(req, res) {
+export default async function handler(req, res) {
   if (req.method !== 'POST') {
     res.setHeader('Allow', 'POST');
     return res.status(405).json({ ok: false, error: 'Method not allowed' });
