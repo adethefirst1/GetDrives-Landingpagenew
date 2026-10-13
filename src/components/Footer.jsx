@@ -220,6 +220,9 @@ export default function Footer({ variant = "home" }) {
               <Link to="/terms" className="hover:underline">
                 Terms of Service
               </Link>
+              <Link to="/cancellation" className="hover:underline">
+                Cancellation Policy
+              </Link>
               <Link to="/cookies" className="hover:underline">
                 Cookie Policy
               </Link>
@@ -315,6 +318,9 @@ export default function Footer({ variant = "home" }) {
             </Link>
             <Link to="/terms" className="hover:underline">
               Terms of Service
+            </Link>
+            <Link to="/cancellation" className="hover:underline">
+              Cancellation Policy
             </Link>
             <Link to="/cookies" className="hover:underline">
               Cookie Policy

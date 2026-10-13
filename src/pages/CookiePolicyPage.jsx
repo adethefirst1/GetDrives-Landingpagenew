@@ -23,12 +23,12 @@ export default function CookiePolicyPage() {
             </p>
           </div>
           
-          <h1 className="mb-8 font-extrabold leading-[0.95] text-4xl sm:text-5xl md:text-6xl text-white">
+          <h1 className="mb-4 font-extrabold leading-[0.95] text-4xl sm:text-5xl md:text-6xl text-white">
             Cookie Policy
           </h1>
+          <p className="mb-8 font-semibold text-white">Effective Date: October 1, 2026 · Version 1.0</p>
           
           <div className="prose prose-invert prose-brand prose-p:leading-relaxed prose-li:leading-relaxed max-w-none text-brand-gray/80">
-            <p className="font-semibold text-white">Effective Date: April 15, 2026</p>
 
             <h2 className="mt-12 mb-4 text-xl font-bold uppercase tracking-wide text-white">1. WHAT ARE COOKIES</h2>
             <p>

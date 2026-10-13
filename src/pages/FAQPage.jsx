@@ -1,122 +1,11 @@
 import { useState, useMemo } from "react";
+import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import CTASection from "../components/CTASection";
 import { DOCUMENT_TITLES, useDocumentTitle } from "../useDocumentTitle";
-
-const FAQ_DATA = [
-  {
-    category: "General",
-    questions: [
-      {
-        id: "gen-1",
-        q: "How do I book a ride?",
-        a: "Booking a ride is simple. Open the GetDrives app, enter your destination in the 'Where to?' field, select your preferred ride type, and confirm your pickup location. You'll be matched with a nearby driver in seconds.",
-      },
-      {
-        id: "gen-2",
-        q: "Is GetDrives available in my city?",
-        a: "GetDrives is currently available in major cities across Nigeria. We are constantly expanding, so check the app or our website for the most up-to-date list of active cities.",
-      },
-      {
-        id: "gen-3",
-        q: "What should I do if I lose an item?",
-        a: "If you leave an item in a GetDrives vehicle, you can contact your driver directly through the app up to 24 hours after the trip. If you need further assistance, our support team is available 24/7.",
-      },
-    ],
-  },
-  {
-    category: "Riders",
-    questions: [
-      {
-        id: "rid-1",
-        q: "How are fares calculated?",
-        a: "Fares are calculated based on a base rate, time, and distance of your route. During times of high demand, dynamic pricing may apply to ensure reliable pickups. You'll always see an estimated fare before you confirm your request.",
-      },
-      {
-        id: "rid-2",
-        q: "Can I schedule rides in advance?",
-        a: "Yes! GetDrives allows you to schedule rides up to 7 days in advance. Simply tap the calendar icon next to the 'Where to?' box and choose your preferred pickup date and time.",
-      },
-      {
-        id: "rid-3",
-        q: "How do I cancel a ride?",
-        a: "You can cancel your ride request at any time before the driver arrives. Please note that a cancellation fee may apply if you cancel more than 3 minutes after a driver has accepted your request.",
-      },
-    ],
-  },
-  {
-    category: "Drivers",
-    questions: [
-      {
-        id: "drv-1",
-        q: "How do I become a driver?",
-        a: "Join the driver waitlist on our Drive With Us page. Tell us your city, vehicle, and when you could start. We'll reach out when GetDrives begins onboarding in your area. No app to download yet. Document checks happen when your city opens.",
-      },
-      {
-        id: "drv-2",
-        q: "How does driver verification work?",
-        a: "Safety is our priority. Every GetDrives driver undergoes a comprehensive background check, identity verification, and vehicle inspection before they are approved to accept rides on the platform.",
-      },
-      {
-        id: "drv-3",
-        q: "How and when do I get paid?",
-        a: "Drivers get paid weekly directly into their provided bank accounts. You can also use our Instant Pay feature to cash out your earnings up to 3 times a day for a small fee.",
-      },
-    ],
-  },
-  {
-    category: "Payments",
-    questions: [
-      {
-        id: "pay-1",
-        q: "What payment methods are accepted?",
-        a: "GetDrives accepts major credit and debit cards, secure mobile money wallets, and in some regions, cash payments. You can securely store your payment information within the app.",
-      },
-      {
-        id: "pay-2",
-        q: "Are there cancellation fees?",
-        a: "Yes, to fairly compensate our drivers for their time, a small cancellation fee is charged if you cancel a trip after the driver has made significant progress toward your location.",
-      },
-    ],
-  },
-  {
-    category: "Safety",
-    questions: [
-      {
-        id: "saf-1",
-        q: "What safety measures are in place?",
-        a: "Our app includes safety features like an in-app emergency button, the ability to share your trip details with loved ones, 24/7 incident support, and GPS tracking for every ride.",
-      },
-      {
-        id: "saf-2",
-        q: "How do you vet your drivers?",
-        a: "All drivers must pass rigorous background checks and submit valid documentation before they can join the platform. We also actively monitor driver ratings and feedback to ensure high safety standards.",
-      },
-    ],
-  },
-  {
-    category: "Logistics & Deliveries",
-    questions: [
-      {
-        id: "log-1",
-        q: "How do I track my delivery?",
-        a: "You can track your delivery in real-time through the GetDrives app. Once your item is picked up, you'll see the courier's location on the map and receive updates until it reaches its destination.",
-      },
-      {
-        id: "log-2",
-        q: "Can businesses use GetDrives for logistics?",
-        a: "Absolutely. We offer a dedicated GetDrives for Business portal that allows companies to manage multiple deliveries, track expenses, and access priority support.",
-      },
-      {
-        id: "log-3",
-        q: "What are the size limits for deliveries?",
-        a: "Delivery limits depend on the type of vehicle you select. Motorbikes are great for small parcels, while cars and vans can accommodate larger boxes. Detailed dimensions are provided in the app.",
-      },
-    ],
-  },
-];
+import { FAQ_DATA } from "../data/faqContent";
 
 function FAQAccordion({ question, answer, isOpen, onClick }) {
   return (
@@ -205,8 +94,27 @@ export default function FAQPage() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="mx-auto mt-6 max-w-2xl text-base font-normal leading-relaxed text-[#AAAAAA] md:text-lg"
             >
-              Everything you need to know about using GetDrives. Can't find the answer you're looking for? Reach out to our support team.
+              Practical answers for riders and drivers. Full rules live in our{" "}
+              <Link to="/terms" className="text-brand-orange hover:underline">
+                Rider Terms
+              </Link>
+              ,{" "}
+              <Link to="/cancellation" className="text-brand-orange hover:underline">
+                Cancellation Policy
+              </Link>
+              , and{" "}
+              <Link to="/privacy" className="text-brand-orange hover:underline">
+                Privacy Policy
+              </Link>
+              . Can&apos;t find what you need? Contact support in the app or at{" "}
+              <a href="mailto:riders@getdrives.com" className="text-brand-orange hover:underline">
+                riders@getdrives.com
+              </a>
+              .
             </motion.p>
+            <p className="mx-auto mt-3 max-w-2xl text-xs text-[#666666]">
+              Effective October 1, 2026 · Version 1.0
+            </p>
           </div>
         </section>
 
